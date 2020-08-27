@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "a570bd53-4a27-4d59-87db-e805510f47d9",
+		"name": "minecraft-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch all Servers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fd38f42-de90-4674-9186-b01d65593bc3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/server",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"server"
+					]
+				},
+				"description": "test server"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Hiscores",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bbd10b4c-5440-44c2-a828-340b04c5a977",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/hiscore",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"hiscore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Server",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1cc5f4d0-1da4-4e14-bcfd-c866ebd86104",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"prisonserver.com\",\n    \"description\": \"Don't drop the soap!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/server",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"server"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vote",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3fd38f42-de90-4674-9186-b01d65593bc3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ServerID\": 2,\n    \"Delta\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/vote",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"vote"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

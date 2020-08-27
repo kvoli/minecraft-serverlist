@@ -63,7 +63,7 @@ func voteHandler(w http.ResponseWriter, r *http.Request) {
 	var vote Vote
 	json.Unmarshal(reqBody, &vote)
 
-	if v, ok := Votes[vote.ServerID] ; !ok{
+	if v, ok := Votes[vote.ServerID] ; ok{
 		Votes[vote.ServerID] = v + vote.Delta
 		json.NewEncoder(w).Encode(Votes[vote.ServerID])
 	}
